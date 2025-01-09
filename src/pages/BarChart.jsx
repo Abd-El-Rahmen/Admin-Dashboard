@@ -1,11 +1,11 @@
-import React from 'react'
+import { Box } from "@mui/material";
+import React from "react";
+import Bar from "../components/charts/Bar";
 
 const BarChart = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  return <Box sx={{ height: "85vh" }}>
+    <Bar/>
+  </Box>;
+};
 
-export default BarChart
+export default BarChart;

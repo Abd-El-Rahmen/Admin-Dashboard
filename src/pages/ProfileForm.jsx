@@ -1,5 +1,14 @@
-import { Box, Button, MenuItem, Stack, TextField } from "@mui/material";
+import {
+  Box,
+  Button,
+  IconButton,
+  MenuItem,
+  Snackbar,
+  Stack,
+  TextField,
+} from "@mui/material";
 import React, { useState } from "react";
+import CloseIcon from "@mui/icons-material/Close";
 
 const roles = [
   {
@@ -16,28 +25,28 @@ const roles = [
   },
 ];
 
+const initialFormData = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  phone: "",
+  address1: "",
+  address2: "",
+  role: "USR",
+};
+
 const ProfileForm = () => {
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address1: "",
-    address2: "",
-    role: "USR", 
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
-  const [errors, setErrors] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    address1: "",
-    address2: "",
-    role: "",
-  });
+  const [openSnackBar, setOpenSnackBar] = React.useState(false);
 
-   const validate = () => {
+  const handleClose = () => {
+    setOpenSnackBar(false);
+  };
+
+  const [errors, setErrors] = useState({ ...initialFormData, role: "" });
+
+  const validate = () => {
     let newErrors = {};
     let isValid = true;
 
@@ -80,6 +89,8 @@ const ProfileForm = () => {
 
     if (validate()) {
       console.log("Form submitted successfully:", formData);
+      setOpenSnackBar(true);
+      setFormData(initialFormData);
     } else {
       console.log("Form has errors, not submitting");
     }
@@ -188,6 +199,22 @@ const ProfileForm = () => {
         >
           Create New User
         </Button>
+        <Snackbar
+          open={openSnackBar}
+          autoHideDuration={3000}
+          onClose={handleClose}
+          message="User Saved"
+          action={
+            <IconButton
+              size="small"
+              aria-label="close"
+              color="inherit"
+              onClick={handleClose}
+            >
+              <CloseIcon fontSize="small" />
+            </IconButton>
+          }
+        />
       </Box>
     </Box>
   );

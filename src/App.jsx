@@ -1,12 +1,13 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useThemeStore } from "./store/themeStore";
 import { Route, Routes } from "react-router-dom";
-import { BarChart, PieChart } from "@mui/icons-material";
+import {  PieChart } from "@mui/icons-material";
 import ManageTeam from "./pages/ManageTeam";
 import ProfileForm from "./pages/ProfileForm";
-import Calendar from "./pages/Calendar";
+import Calendar from "./pages/Calendar.jsx";
 import FaqPage from "./pages/FaqPage";
 import LineChart from "./pages/LineChart";
+import BarChart from "./pages/BarChart.jsx";
 import InvoiceBalance from "./pages/InvoiceBalance";
 import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
