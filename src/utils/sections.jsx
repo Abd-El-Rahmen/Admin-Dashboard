@@ -8,6 +8,7 @@ import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import PieChartOutlineIcon from "@mui/icons-material/PieChartOutline";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
+import MapIcon from '@mui/icons-material/Map';
 
 const sections = [
   [
@@ -29,6 +30,7 @@ const sections = [
     { text: "Bar Chart", icon: <BarChartIcon />, path: "/bar-chart" },
     { text: "Pie Chart", icon: <PieChartOutlineIcon />, path: "/pie-chart" },
     { text: "Line Chart", icon: <ShowChartIcon />, path: "/line-chart" },
+    { text: "Geography", icon: <MapIcon />, path: "/geography" },
   ],
 ];
 

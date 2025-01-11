@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Line from "../components/charts/Line";
+import { Box } from "@mui/material";
 
 const LineChart = () => {
   return (
-    <div>
-      
-    </div>
-  )
-}
+    <Box mx={{ height: "85vh" }}>  
+      <Line />
+    </Box>
+  );
+};
 
-export default LineChart
+export default LineChart;

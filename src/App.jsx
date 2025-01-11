@@ -1,7 +1,7 @@
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useThemeStore } from "./store/themeStore";
 import { Route, Routes } from "react-router-dom";
-import {  PieChart } from "@mui/icons-material";
+import PieChart from "./pages/PieChart.jsx";
 import ManageTeam from "./pages/ManageTeam";
 import ProfileForm from "./pages/ProfileForm";
 import Calendar from "./pages/Calendar.jsx";
@@ -13,8 +13,9 @@ import TopBar from "./components/TopBar";
 import SideBar from "./components/SideBar";
 import { useState } from "react";
 import { Box, CssBaseline } from "@mui/material";
-import Inbox from "./pages/Inbox";
 import Contacts from "./pages/Contacts";
+import Geo from "./pages/Geo.jsx";
+import Home from "./pages/Home.jsx";
 
 function App() {
   const { themeMode } = useThemeStore();
@@ -34,8 +35,6 @@ function App() {
     setOpen(false);
   };
 
-  
-
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -47,7 +46,7 @@ function App() {
       />
       <Box component="main" sx={{ flexGrow: 1, pl: 9, pt: 9 }}>
         <Routes>
-          <Route path="/" element={<Inbox />} />
+          <Route path="/" element={<Home />} />
           <Route path="/manage-team" element={<ManageTeam />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/invoice-balances" element={<InvoiceBalance />} />
@@ -57,6 +56,7 @@ function App() {
           <Route path="/bar-chart" element={<BarChart />} />
           <Route path="/pie-chart" element={<PieChart />} />
           <Route path="/line-chart" element={<LineChart />} />
+          <Route path="/geography" element={<Geo />} />
         </Routes>
       </Box>
     </ThemeProvider>
